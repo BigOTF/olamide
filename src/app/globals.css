@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 body {
-  background-color: #111111/0%;
-  font-family: var(--font-playfair-display), Georgia, serif;
+  background-color: #111111;
+  color: #FAFBFF;
+  font-family: var(--font-inter), Arial, sans-serif;
 }
 
 .helvetica-heading {
