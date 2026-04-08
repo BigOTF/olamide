@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Icon } from "@iconify/react"
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,8 +12,23 @@ const navLinks = [
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false)
+    const [scrolled, setScrolled] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+        setScrolled(window.scrollY > 20)
+        }
+        window.addEventListener("scroll", handleScroll)
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+
     return (
-        <header className="max-w-360 w-full px-7 py-5 lg:py-7 lg:px-25 sticky top-0 z-30 flex items-center justify-between">
+        <header className={`max-w-360 w-full px-7 py-5 lg:py-7 lg:px-25 sticky top-0 z-30 flex items-center justify-between transition-all duration-300 ${
+            scrolled
+                ? "bg-[#111111]/80 backdrop-blur-md border-b border-white/10"
+                : "bg-transparent"
+            }`}
+        >
             <h1>
                 <Link href="/" className="helvetica-heading font-bold tracking-[5%] uppercase">Olamide.</Link>
             </h1>
