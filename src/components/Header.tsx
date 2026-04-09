@@ -5,9 +5,9 @@ import { Icon } from "@iconify/react"
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
-  { label: "Projects", href: "/projects" },
-  { label: "Blog", href: "/blog" },
+  { label: "Work", href: "/work" },
   { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
@@ -23,26 +23,26 @@ export default function Header() {
     }, [])
 
     return (
-        <header className={`max-w-360 w-full px-7 py-5 lg:py-7 lg:px-25 sticky top-0 z-30 flex items-center justify-between transition-all duration-300 ${
+        <header className={`max-w-360 w-full px-4 py-4 h-19 lg:h-24 lg:py-6 lg:px-15 sticky top-0 z-30 flex items-center justify-between transition-all duration-300 ${
             scrolled
                 ? "bg-[#111111]/80 backdrop-blur-md border-b border-white/10"
                 : "bg-transparent"
             }`}
         >
             <h1>
-                <Link href="/" className="helvetica-heading font-bold tracking-[5%] uppercase">Olamide.</Link>
+                <Link href="/" className="font-bebas text-[28px] lg:text-[32px] lg:leading-[150%] tracking-[-1%] text-[#C7C7C7]">Olamide Olorunfemi</Link>
             </h1>
 
-            <nav className="lg:flex items-center lg:gap-25 hidden">
+            <nav className="lg:flex items-center lg:gap-8 hidden">
                 {
                     navLinks.map((nav, index: number) => (
-                        <Link key={index} href={nav.href} className="font-medium lg:text-base">{nav.label}</Link>
+                        <Link key={index} href={nav.href} className="font-medium lg:text-base text-[#C7C7C7]">{nav.label}</Link>
                     ))
                 }
             </nav>
 
-            <button onClick={() => setIsOpen(true)} className="lg:hidden">
-                <Icon icon="ci:hamburger-lg" width="24" height="24" />
+            <button onClick={() => setIsOpen(true)} className="lg:hidden w-11 h-11 flex items-center justify-center text-[#C7C7C7]">
+                <Icon icon="tabler:menu" width="32" height="32" />
             </button>
 
             <AnimatePresence>
@@ -70,11 +70,11 @@ export default function Header() {
                             <div className="flex items-center justify-between text-black">
 
                                 <h1>
-                                    <Link href="/" className="helvetica-heading font-bold tracking-[5%] uppercase">Olamide.</Link>
+                                    <Link href="/" className="font-bebas text-[28px] tracking-[-1%] text-[#0A0A0A]">Olamide</Link>
                                 </h1>
                             
-                                <button onClick={() => setIsOpen(false)}>
-                                    <Icon icon="ic:baseline-close" width="24" height="24" color="" />
+                                <button onClick={() => setIsOpen(false)} className="w-11 h-11 flex items-center justify-center text-[#0A0A0A]">
+                                    <Icon icon="ic:baseline-close" width="28" height="288" />
                                 </button>
                             </div>
 
