@@ -36,7 +36,7 @@ export default function Header() {
             <nav className="lg:flex items-center lg:gap-8 hidden">
                 {
                     navLinks.map((nav, index: number) => (
-                        <Link key={index} href={nav.href} className="font-medium lg:text-base text-[#C7C7C7]">{nav.label}</Link>
+                        <Link key={index} href={nav.href} className="font-medium lg:text-base text-[#C7C7C7] hover:text-white transition-colors duration-300">{nav.label}</Link>
                     ))
                 }
             </nav>

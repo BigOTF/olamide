@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Icon } from "@iconify/react"
+import FadeUp from "./UI/FadeUpAnimation"
+import { motion, useInView } from "framer-motion";
 
 const socialLinks = [
   { icon: "mdi:github", href: "https://github.com/BigOTF" },
@@ -47,43 +49,55 @@ export default function ContactMe() {
                 <div className="flex flex-col justify-between lg:h-152.75">
                     <div className="flex flex-col gap-6 lg:gap-10">
                         <div className="flex flex-col gap-4">
-                            <p className="font-bebas text-[43px] lg:text-[76px] leading-[100%] tracking-[-2%] lg:tracking-[0%] text-white">Let’s connect</p>
+                            <FadeUp delay={0.1}>
+                                <p className="font-bebas text-[43px] lg:text-[76px] leading-[100%] tracking-[-2%] lg:tracking-[0%] text-white">Let’s connect</p>
+                            </FadeUp>
                             <div className="flex flex-col gap-2">
                                 <div className="flex items-center gap-0.75">
-                                    <p className="text-[#C7C7C7] text-base lg:text-lg">Say hello at</p>
-                                    <span>
-                                        <Link 
-                                            href="mailto:olamideolorunfemi14@gmail.com?subject=Hello from your portfolio&body=Hi Olamide,%0A%0AI really liked your work and would love to get in touch." 
-                                            className="text-white underline decoration-[#D3E97A] underline-offset-6 transition-colors"
-                                        >
-                                            olamideolorunfemi14@gmail.com
-                                        </Link>
-                                    </span>
+                                    <FadeUp delay={0.3}>
+                                        <p className="text-[#C7C7C7] text-base lg:text-lg">Say hello at</p>
+                                    </FadeUp>
+                                    <FadeUp delay={0.4}>
+                                        <span>
+                                            <Link 
+                                                href="mailto:olamideolorunfemi14@gmail.com?subject=Hello from your portfolio&body=Hi Olamide,%0A%0AI really liked your work and would love to get in touch." 
+                                                className="text-white underline decoration-[#D3E97A] underline-offset-6 transition-colors"
+                                            >
+                                                olamideolorunfemi14@gmail.com
+                                            </Link>
+                                        </span>
+                                    </FadeUp>
                                 </div>
 
                                 <div className="flex items-center gap-0.75">
-                                    <p className="text-[#C7C7C7] text-base lg:text-lg">For more info, here’s my</p>
-                                    <span>
-                                        <Link 
-                                            href="/resume/olorunfemi_olamide_frontend_resume.pdf"
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-white underline decoration-[#D3E97A] underline-offset-6 transition-colors"
-                                        >
-                                            resume
-                                        </Link>
-                                    </span>
+                                    <FadeUp delay={0.5}>
+                                        <p className="text-[#C7C7C7] text-base lg:text-lg">For more info, here’s my</p>
+                                    </FadeUp>
+                                    <FadeUp delay={0.6}>
+                                        <span>
+                                            <Link 
+                                                href="/resume/olorunfemi_olamide_frontend_resume.pdf"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-white underline decoration-[#D3E97A] underline-offset-6 transition-colors"
+                                            >
+                                                resume
+                                            </Link>
+                                        </span>
+                                    </FadeUp>
                                 </div>
                             </div>
                         </div>
 
                         <div className="flex items-center gap-8 lg:gap-6">
-                            {socialLinks.map((link) => (
-                                <button key={link.icon} className="w-12 h-12 lg:w-13.5 lg:h-13.5 bg-[#222222] text-[#D3E97A] rounded-full flex items-center justify-center">
-                                <Link href={link.href}>
-                                    <Icon icon={link.icon} width="24" height="24" />
-                                </Link>
-                                </button>
+                            {socialLinks.map((link, index) => (
+                                <FadeUp key={index} delay={index * 0.15}>
+                                    <button className="w-12 h-12 lg:w-13.5 lg:h-13.5 bg-[#222222] text-[#D3E97A] rounded-full flex items-center justify-center">
+                                        <Link href={link.href}>
+                                            <Icon icon={link.icon} width="24" height="24" />
+                                        </Link>
+                                    </button>
+                                </FadeUp>
                             ))}
                         </div>
                     </div>
@@ -98,58 +112,82 @@ export default function ContactMe() {
 
                     <div className="flex flex-col gap-6">
 
+                        {[
                         <div className="flex flex-col gap-2">
                             <p className="font-medium text-base text-[#C7C7C7]">Name</p>
                             <input
-                                type="text"
-                                name="name"
-                                placeholder="Your Name"
-                                required
-                                className="w-full h-11.5 lg:w-150 lg:h-12.75 px-4 py-2.5 lg:py-3 rounded-sm bg-[#1A1A1A] border border-[#484848] focus:outline-none text-white text-base lg:text-lg"
+                            type="text"
+                            name="name"
+                            placeholder="Your Name"
+                            required
+                            className="w-full h-11.5 lg:w-150 lg:h-12.75 px-4 py-2.5 lg:py-3 rounded-sm bg-[#1A1A1A] border border-[#484848] focus:outline-none text-white text-base lg:text-lg"
                             />
-                        </div>
+                        </div>,
 
                         <div className="flex flex-col gap-2">
                             <p className="font-medium text-base text-[#C7C7C7]">Email</p>
                             <input
-                                type="email"
-                                name="email"
-                                placeholder="Your Email"
-                                required
-                                className="w-full h-11.5 lg:w-150 lg:h-12.75 px-4 py-2.5 lg:py-3 rounded-sm bg-[#1A1A1A] border border-[#484848] focus:outline-none text-white text-base lg:text-lg"
+                            type="email"
+                            name="email"
+                            placeholder="Your Email"
+                            required
+                            className="w-full h-11.5 lg:w-150 lg:h-12.75 px-4 py-2.5 lg:py-3 rounded-sm bg-[#1A1A1A] border border-[#484848] focus:outline-none text-white text-base lg:text-lg"
                             />
-                        </div>
+                        </div>,
 
                         <div className="flex flex-col gap-2">
                             <p className="font-medium text-base text-[#C7C7C7]">Subject</p>
                             <input
-                                type="text"
-                                name="subject"
-                                placeholder="Subject (optional)"
-                                className="w-full h-11.5 lg:w-150 lg:h-12.75 px-4 py-2.5 lg:py-3 rounded-sm bg-[#1A1A1A] border border-[#484848] focus:outline-none text-white text-base lg:text-lg"
+                            type="text"
+                            name="subject"
+                            placeholder="Subject (optional)"
+                            className="w-full h-11.5 lg:w-150 lg:h-12.75 px-4 py-2.5 lg:py-3 rounded-sm bg-[#1A1A1A] border border-[#484848] focus:outline-none text-white text-base lg:text-lg"
                             />
-                        </div>
+                        </div>,
 
                         <div className="flex flex-col gap-2">
                             <p className="font-medium text-base text-[#C7C7C7]">Message</p>
                             <textarea
-                                name="message"
-                                placeholder="Your Message"
-                                rows={6}
-                                required
-                                className="w-full h-37 lg:w-150 lg:h-39 px-4 py-2.5 lg:py-3 rounded-sm bg-[#1A1A1A] border border-[#484848] focus:outline-none text-white text-base lg:text-lg"
+                            name="message"
+                            placeholder="Your Message"
+                            rows={6}
+                            required
+                            className="w-full h-37 lg:w-150 lg:h-39 px-4 py-2.5 lg:py-3 rounded-sm bg-[#1A1A1A] border border-[#484848] focus:outline-none text-white text-base lg:text-lg"
                             />
-                        </div>
+                        </div>,
+                        ].map((field, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: -40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: false, margin: "-80px" }}
+                            transition={{
+                            duration: 0.4,
+                            delay: index * 0.1,
+                            ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+                            }}
+                        >
+                            {field}
+                        </motion.div>
+                        ))}
 
                     </div>
 
-                    <button
+                    <motion.button
                         type="submit"
                         disabled={loading}
-                        className="w-35 h-13.5 flex items-center justify-center bg-[#D3E97A] px-10 py-5 rounded-full font-bold text-base text-[#0A0A0A] disabled:opacity-50 "
+                        className="w-35 h-13.5 flex items-center justify-center bg-[#D3E97A] px-10 py-5 rounded-full font-bold text-base text-[#0A0A0A] disabled:opacity-50"
+                        initial={{ opacity: 0, y: -40 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: false, margin: "-80px" }}
+                        transition={{
+                        duration: 0.4,
+                        delay: 0.4,
+                        ease: [0.22, 1, 0.36, 1] as [number, number, number, number],
+                        }}
                     >
                         {loading ? "Sending..." : "Submit"}
-                    </button>
+                    </motion.button>
                 </form>
                 
             </div>
