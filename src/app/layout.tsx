@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Olamide Olorunfemi | Frontend Developer",
     description: "Frontend developer based in Lagos, Nigeria. I build fast, responsive web interfaces using Next.js, TypeScript, Tailwind CSS and Framer Motion.",
-    url: "https://yourportfolio.vercel.app",
+    url: "https://olamidedev.vercel.app/",
     siteName: "Olamide Olorunfemi",
     locale: "en_US",
     type: "website",
