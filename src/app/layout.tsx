@@ -15,8 +15,21 @@ const manropeFont = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Olamide_Dev",
-  description: "Frontend developer",
+  title: "Olamide Olorunfemi | Frontend Developer",
+  description: "Frontend developer based in Lagos, Nigeria. I build fast, responsive web interfaces using Next.js, TypeScript, Tailwind CSS and Framer Motion.",
+  keywords: ["Frontend Developer", "React", "Next.js", "TypeScript", "Lagos", "Nigeria", "Web Developer"],
+  authors: [{ name: "Olamide Olorunfemi" }],
+  openGraph: {
+    title: "Olamide Olorunfemi | Frontend Developer",
+    description: "Frontend developer based in Lagos, Nigeria. I build fast, responsive web interfaces using Next.js, TypeScript, Tailwind CSS and Framer Motion.",
+    url: "https://yourportfolio.vercel.app",
+    siteName: "Olamide Olorunfemi",
+    locale: "en_US",
+    type: "website",
+  },
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
