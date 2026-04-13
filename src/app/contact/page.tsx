@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Icon } from "@iconify/react"
-import FadeUp from "./UI/FadeUpAnimation"
+import FadeUp from "@/components/UI/FadeUpAnimation"
 import { motion, useInView } from "framer-motion";
 
 const socialLinks = [
@@ -11,7 +11,7 @@ const socialLinks = [
   { icon: "line-md:linkedin", href: "https://www.linkedin.com/in/olorunfemi-olamide-9b4037222/" },
 ]
 
-export default function ContactMe() {
+export default function Contact() {
     const [loading, setLoading] = useState(false);
     const [submitted, setSubmitted] = useState(false);
 
@@ -42,68 +42,61 @@ export default function ContactMe() {
     };
 
     return (
-        <section className="px-4 py-16 lg:px-25 lg:py-20 flex flex-col gap-16 lg:gap-20">
+        <main className="max-w-360 w-full flex flex-col">
+            <section className="px-4 py-5 lg:py-10 lg:px-25 flex flex-col lg:flex-row lg:justify-between gap-10">
 
-            <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
-
-                <div className="flex flex-col justify-between lg:h-152.75">
-                    <div className="flex flex-col gap-6 lg:gap-10">
-                        <div className="flex flex-col gap-4">
-                            <FadeUp delay={0.1}>
-                                <p className="font-bebas text-[43px] lg:text-[76px] leading-[100%] tracking-[-2%] lg:tracking-[0%] text-white">Let’s connect</p>
-                            </FadeUp>
-                            <div className="flex flex-col gap-2">
-                                <div className="flex items-center gap-0.75">
-                                    <FadeUp delay={0.3}>
-                                        <p className="text-[#C7C7C7] text-base lg:text-lg">Say hello at</p>
-                                    </FadeUp>
-                                    <FadeUp delay={0.4}>
-                                        <span>
-                                            <Link 
-                                                href="mailto:olamideolorunfemi14@gmail.com?subject=Hello from your portfolio&body=Hi Olamide,%0A%0AI really liked your work and would love to get in touch." 
-                                                className="text-white underline decoration-[#D3E97A] underline-offset-6 transition-colors"
-                                            >
-                                                olamideolorunfemi14@gmail.com
-                                            </Link>
-                                        </span>
-                                    </FadeUp>
-                                </div>
-
-                                <div className="flex items-center gap-0.75">
-                                    <FadeUp delay={0.5}>
-                                        <p className="text-[#C7C7C7] text-base lg:text-lg">For more info, here’s my</p>
-                                    </FadeUp>
-                                    <FadeUp delay={0.6}>
-                                        <span>
-                                            <Link 
-                                                href="/resume/olorunfemi_olamide_frontend_resume.pdf"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="text-white underline decoration-[#D3E97A] underline-offset-6 transition-colors"
-                                            >
-                                                resume
-                                            </Link>
-                                        </span>
-                                    </FadeUp>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="flex items-center gap-8 lg:gap-6">
-                            {socialLinks.map((link, index) => (
-                                <FadeUp key={index} delay={index * 0.15}>
-                                    <button className="w-12 h-12 lg:w-13.5 lg:h-13.5 bg-[#222222] text-[#D3E97A] rounded-full flex items-center justify-center">
-                                        <Link href={link.href}>
-                                            <Icon icon={link.icon} width="24" height="24" />
-                                        </Link>
-                                    </button>
+                <div className="flex flex-col gap-6 lg:gap-10">
+                    <div className="flex flex-col gap-4">
+                        <FadeUp delay={0.1}>
+                            <p className="font-bebas text-[57px] leading-[100%] lg:text-[101px] lg:leading-[90%] tracking-[-2%] lg:tracking-[0%] text-white">Contact Me</p>
+                        </FadeUp>
+                        <div className="flex flex-col gap-2">
+                            <div className="flex items-center gap-0.75">
+                                <FadeUp delay={0.3}>
+                                    <p className="text-[#C7C7C7] text-base lg:text-lg">Say hello at</p>
                                 </FadeUp>
-                            ))}
+                                <FadeUp delay={0.4}>
+                                    <span>
+                                        <Link 
+                                            href="mailto:olamideolorunfemi14@gmail.com?subject=Hello from your portfolio&body=Hi Olamide,%0A%0AI really liked your work and would love to get in touch." 
+                                            className="text-white underline decoration-[#D3E97A] underline-offset-6 transition-colors"
+                                        >
+                                            olamideolorunfemi14@gmail.com
+                                        </Link>
+                                    </span>
+                                </FadeUp>
+                            </div>
+
+                            <div className="flex items-center gap-0.75">
+                                <FadeUp delay={0.5}>
+                                    <p className="text-[#C7C7C7] text-base lg:text-lg">For more info, here’s my</p>
+                                </FadeUp>
+                                <FadeUp delay={0.6}>
+                                    <span>
+                                        <Link 
+                                            href="/resume/olorunfemi_olamide_frontend_resume.pdf"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white underline decoration-[#D3E97A] underline-offset-6 transition-colors"
+                                        >
+                                            resume
+                                        </Link>
+                                    </span>
+                                </FadeUp>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="hidden lg:block mt-auto">
-                        <p className="font-medium lg:text-base text-[#C7C7C7]">&copy; 2026 Olamide Olorunfemi</p>
+                    <div className="flex items-center gap-8 lg:gap-6">
+                        {socialLinks.map((link, index) => (
+                            <FadeUp key={index} delay={index * 0.15}>
+                                <button className="w-12 h-12 lg:w-13.5 lg:h-13.5 bg-[#222222] text-[#D3E97A] rounded-full flex items-center justify-center">
+                                    <Link href={link.href}>
+                                        <Icon icon={link.icon} width="24" height="24" />
+                                    </Link>
+                                </button>
+                            </FadeUp>
+                        ))}
                     </div>
                 </div>
 
@@ -189,13 +182,8 @@ export default function ContactMe() {
                         {loading ? "Sending..." : "Submit"}
                     </motion.button>
                 </form>
-                
-            </div>
 
-
-            <div className="lg:hidden">
-                <p className="font-medium lg:text-base text-[#C7C7C7]">&copy; 2026 Olamide Olorunfemi</p>
-            </div>
-      </section>
+            </section>
+        </main>
     )
 }

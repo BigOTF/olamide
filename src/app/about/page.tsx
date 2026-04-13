@@ -49,14 +49,12 @@ const workExperience = [
   },
 ]
 
-
-
 export default function About() {
     const ref = useRef(null);
     const isInView = useInView(ref, { margin: "-80px" })
 
     return (
-        <main className="max-w-360 w-full flex flex-col pb-[100000px] lg:pb-0">
+        <main className="max-w-360 w-full flex flex-col">
             <section className="px-4 py-5 lg:py-10 lg:px-25 flex flex-col gap-6 lg:gap-9 border-b border-[#484848]">
                 <FadeUp>
                 <div>
