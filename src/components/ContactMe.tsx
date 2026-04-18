@@ -53,7 +53,7 @@ export default function ContactMe() {
                                 <p className="font-bebas text-[43px] lg:text-[76px] leading-[100%] tracking-[-2%] lg:tracking-[0%] text-white">Let’s connect</p>
                             </FadeUp>
                             <div className="flex flex-col gap-2">
-                                <div className="flex items-center gap-0.75">
+                                <div className="flex items-center gap-0.75 text-nowrap">
                                     <FadeUp delay={0.3}>
                                         <p className="text-[#C7C7C7] text-base lg:text-lg">Say hello at</p>
                                     </FadeUp>

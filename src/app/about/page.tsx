@@ -35,7 +35,7 @@ const workExperience = [
     role: "Frontend Developer",
     company: "Solbase",
     startDate: "Oct 2024",
-    endDate: "Feb 2026",
+    endDate: "Present",
     workDescription:
       "Built and shipped the Solbase Web3 landing page from the ground up, owning both design decisions and implementation without a dedicated designer. Migrated the codebase from React to Next.js for better performance and SEO, and resolved critical image optimization issues that were slowing down the entire experience.",
   },
@@ -43,7 +43,7 @@ const workExperience = [
     role: "Frontend Engineer",
     company: "DeySpeak",
     startDate: "Oct 2025",
-    endDate: "Present",
+    endDate: "Dec 2025",
     workDescription:
       "Took full ownership of the frontend rebuild for an Urhobo language learning platform, redesigning and developing key pages from scratch with no design handoff. Migrated the codebase from JavaScript to TypeScript, fixed performance bottlenecks from unoptimized images, and shipped the Blog, Privacy Policy, and Terms of Use pages end to end.",
   },
