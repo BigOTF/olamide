@@ -119,21 +119,31 @@ export default function Home() {
                   <div className="flex items-center gap-6">
 
                     <div className="flex flex-col gap-1 border-b-2 border-[#D3E97A]">
-                      <Link href={project.link} className="flex items-center gap-1 font-bold text-sm lg:text-base text-[#D3E97A] uppercase">
-                        Live Demo
-                        <span className="w-5.5 h-5.5 lg:w-6 lg:h-6 flex items-center justify-center">
-                          <Icon icon="prime:arrow-up-right" width="24" height="24" />
-                        </span>
+                      <Link 
+                          href={project.link} 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 font-bold text-sm lg:text-base text-[#D3E97A] uppercase"
+                      >
+                          Live Demo
+                          <span className="w-5.5 h-5.5 lg:w-6 lg:h-6 flex items-center justify-center">
+                              <Icon icon="prime:arrow-up-right" width="24" height="24" />
+                          </span>
                       </Link>
                     </div>
 
                     <div className="flex flex-col gap-1 border-b-2 border-[#D3E97A]">
-                      <Link href={project.github} className="flex items-center gap-1 font-bold text-sm lg:text-base text-[#D3E97A] uppercase">
-                        See on Github
-                        <span className="w-5.5 h-5.5 lg:w-6 lg:h-6 flex items-center justify-center">
-                          <Icon icon="mdi:github" width="24" height="24" />
-                        </span>
-                      </Link>
+                        <Link 
+                            href={project.github} 
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-1 font-bold text-sm lg:text-base text-[#D3E97A] uppercase"
+                        >
+                            See on Github
+                            <span className="w-5.5 h-5.5 lg:w-6 lg:h-6 flex items-center justify-center">
+                                <Icon icon="mdi:github" width="24" height="24" />
+                            </span>
+                        </Link>
                     </div>
 
 

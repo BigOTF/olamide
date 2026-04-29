@@ -10,6 +10,16 @@ export const projects = [
         github: "https://github.com/BigOTF/shopco"
     },
     {
+        time: "Apr 2026",
+        title: "InventoryPro",
+        description:
+        "Developed InventoryPro, a full-stack inventory management web application using Next.js 14, TypeScript, and Tailwind CSS. Built a complete product management system with CRUD operations, image uploads via Supabase Storage, real-time search and multi-filter functionality, role-based authentication with Supabase Auth, a responsive dashboard with animated sidebar navigation, dark-mode support, and dynamic data visualizations ",
+        image: "/images/pagedraft.PNG",
+        stack: ["Next.js 14", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Framer Motion", "Context API", "Iconify"],
+        link: "https://pagedraft.vercel.app",
+        github: "https://github.com/BigOTF/Inventory"
+    },
+    {
         time: "feb 2026",
         title: "Photoby",
         description:
